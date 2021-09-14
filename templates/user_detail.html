@@ -1,0 +1,31 @@
+{% extends 'base.html' %} {% block content %}
+
+<h2>User Details</h2>
+<p><a href="/homepage">-Return to Home-</a></p>
+
+<h3>{{user}}</h3>
+
+<p>
+Assigned bugs:
+<ul>
+  {% for bug in assigned %}
+  <li><a href="/bug/{{ bug.id }}">{{ bug }}</a></li>
+  {% endfor %}
+</ul>
+
+Filed bugs:
+<ul>
+  {% for bug in filed %}
+  <li><a href="/bug/{{ bug.id }}">{{ bug }}</a></li>
+  {% endfor %}
+</ul>
+
+Completed bugs:
+<ul>
+  {% for bug in completed %}
+  <li><a href="/bug/{{ bug.id }}">{{ bug }}</a></li>
+  {% endfor %}
+</ul>
+</p>
+
+{% endblock %}

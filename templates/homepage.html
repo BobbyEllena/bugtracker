@@ -1,0 +1,80 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>Home</h1>
+
+Welcome, <a href="/user/{{ request.user.id }}">-{{ request.user }}-</a>.
+
+
+<p>
+  <a href="/addbug">-File a New Bug-</a>
+</p>
+<p>
+  <a href="/logout">-Log Out-</a>
+</p>
+
+<p>
+  <h4>New bugs:</h4>
+{% if new %}
+<ul>
+  {%for bug in new%}
+
+  <li>{% include 'bug_stat.html' %}</li>
+
+  {% endfor %}
+</ul>
+{% else %}
+
+<h6>No new bugs.</h6>
+{% endif %}
+</p>
+
+<p>
+  <h4>In Progress bugs:</h4>
+{% if in_progress %}
+<ul>
+  {%for bug in in_progress%}
+
+  <li>{% include 'bug_stat.html' %}</li>
+
+  {% endfor %}
+</ul>
+{% else %}
+
+<h6>No bugs in progress.</h6>
+{% endif %}
+</p>
+
+<p>
+  <h4>Completed bugs:</h4>
+
+{% if done %}
+<ul>
+  {%for bug in done%}
+
+  <li>{% include 'bug_stat.html' %}</li>
+
+  {% endfor %}
+</ul>
+{% else %}
+
+<h6>No completed bugs.</h6>
+{% endif %}
+</p>
+
+<p>
+  <h4>Invalid bugs:</h4>
+{% if invalid %}
+<ul>
+  {%for bug in invalid%}
+
+  <li>{% include 'bug_stat.html' %}</li>
+
+  {% endfor %}
+</ul>
+{% else %}
+
+<h6>No invalid bugs.</h6>
+{% endif %}
+</p
+
+{% endblock %}

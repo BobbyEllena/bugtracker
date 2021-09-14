@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>Index</h1>
+
+<p>
+{% if user.is_authenticated %}
+
+<p>You are currently logged in as <a href="/user/{{user.id}}/">{{ request.user }}</a>.</p>
+<p><a href="/homepage">-Home-</a></p>
+<p><a href="/logout">-Log Out-</a></p>
+
+{% else %}
+
+<p>You are not logged in.</p>
+
+<p><a href="/login">-Log In-</a></p>
+
+{% endif %}
+
+</p>
+
+{% endblock %}
