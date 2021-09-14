@@ -1,4 +1,4 @@
-This is a projext that I did while i was at Keznie Academy. This a bug tracking app that lets you create tickes and assign them to variuos users.
+This is a project that I did while i was at Keznie Academy. This a bug tracking app that lets you create tickes and assign them to variuos users.
 
 
 
